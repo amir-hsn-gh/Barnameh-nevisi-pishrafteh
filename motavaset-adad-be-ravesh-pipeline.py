@@ -6,23 +6,19 @@ class Pipeline:
         self.data = data
     
     def __or__(self, processor):
-        """عملگر pipe برای اتصال مراحل پردازش"""
         return Pipeline(processor(self.data))
 
 def generate_numbers(count=1000):
-    """تولید کننده اعداد تصادفی"""
     for _ in range(count):
         yield random.randint(1, 100)
 
 def save_to_file(numbers, filename='data.txt'):
-    """ذخیره اعداد در فایل و عبور آنها"""
     with open(filename, 'w') as f:
         for num in numbers:
             f.write(f"{num}\n")
             yield num
 
 def calculate_average(numbers):
-    """محاسبه میانگین به صورت تجمعی"""
     total = 0
     count = 0
     for num in numbers:

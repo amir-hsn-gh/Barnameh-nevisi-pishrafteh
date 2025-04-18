@@ -40,7 +40,6 @@ for i in range(1, num_points + 1):
         elapsed = time.time() - start_time
         print(f"pishraft: {i/num_points*100:.1f}% - zaman: {elapsed:.1f} sanie")
 
-# آپدیت نهایی و نمایش نتیجه
 screen.update()
 print("rasme mosalas kamel shod")
 turtle.done()
